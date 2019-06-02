@@ -6,7 +6,7 @@ import { Quote } from '../quote';
   styleUrls: ['./quote.component.css']
 })
 export class QuoteComponent implements OnInit {
-  quotes = [new Quote(1, 'Roy', 'Legacy is greater than currency', 'Gary Vaynerchuk') ];
+  quotes = [new Quote(1, 'Roy', 'Legacy is greater than currency', 'Gary Vaynerchuk', new Date()) ];
   deleteQuote(isComplete, index) {
     if (isComplete) {
         let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}`);
