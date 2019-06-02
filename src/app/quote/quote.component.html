@@ -1,9 +1,23 @@
-<h1>YOUR FAVORITE QUOTES</h1>
-<ul>
-  <div *ngFor='let quote of quotes;let i = index'>
-      <li>
-        {{quote.name}}
-      </li>
-      <app-quote-details  [quote]='quote' (isComplete)= 'deleteQuote($event, i)'></app-quote-details>
-  </div>
-</ul>
+<div class="container-fluid">
+    <div class="row">
+        <form>
+            <div class="form-group">
+
+                <label for="name">Name</label>
+                <input type="text" required class="form-control" placeholder="Enter name" id="name">
+
+            </div>
+            <div class="form-group">
+
+                <label for="description">Quote</label>
+                <textarea class="form-control" id="description" placeholder="Enter quote" rows="4" required></textarea>
+
+            </div>
+            <div class="form-group">
+                <label for="author">Author</label>
+                <input type='text' required class="form-control" placeholder="Enter quote author" id="author" required>
+
+            </div>
+        </form>
+    </div>
+</div>
