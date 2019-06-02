@@ -1,9 +1,9 @@
 <h1>YOUR FAVORITE QUOTES</h1>
 <ul>
-  <div *ngFor='let quote of quotes'>
-      <li >
+  <div *ngFor='let quote of quotes;let i = index'>
+      <li>
         {{quote.name}}
       </li>
-      <app-quote-details [quote]='quote'></app-quote-details>
+      <app-quote-details  [quote]='quote' (isComplete)= 'deleteQuote($event, i)'></app-quote-details>
   </div>
 </ul>
