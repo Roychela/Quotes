@@ -12,7 +12,7 @@
             </div>
             <div class="form-group">
                 <label for="description">Quote</label>
-                <textarea class="form-control" id="description" placeholder="Enter quote" rows="4" [(ngModel)]="newQuote.description" description="description" #description="ngModel" required></textarea>
+                <textarea class="form-control" id="description" placeholder="Enter quote" rows="4" [(ngModel)]="newQuote.description" name="description" #description="ngModel" required></textarea>
                 <div [hidden]="description.valid || description.pristine" class="alert alert-danger">
                     <p>
                       Quote is Required
@@ -21,16 +21,21 @@
             </div>
             <div class="form-group">
                 <label for="author">Author</label>
-                <input type='text' required class="form-control" placeholder="Enter quote author" id="author" [(ngModel)]="newQuote.author" author="author" #author="ngModel" required>
+                <input type='text' required class="form-control" placeholder="Enter quote author" id="author" [(ngModel)]="newQuote.author" name="author" #author="ngModel" required>
                 <div [hidden]="author.valid || author.pristine" class="alert alert-danger">
                     <p>
                       Quote author is Required
                     </p>
                 </div>
             </div>
-            <div>
-                <label for="posted">Date Posted</label>
-                <input type="date" id="posted" name="dateCreated" required>
+            <div class="form-group">
+                <label for="posted">Post date</label>
+                <input type="date" id="posted" [(ngModel)]="newQuote.dateCreated" name="dateCreated" #dateCreated="ngModel" required>
+                <div [hidden]="dateCreated.valid || dateCreated.pristine" class="alert alert-danger">
+                    <p>
+                      Post date is Required
+                    </p>
+                </div>
             </div>
             <button type="submit" class="btn btn-success btn-lg">Post Quote</button>
         </form>
