@@ -1,6 +1,9 @@
 <h1>YOUR FAVORITE QUOTES</h1>
 <ul>
-    <li *ngFor='let quote of quotes'>
-      {{quote.name}}
-    </li>
+  <div *ngFor='let quote of quotes'>
+      <li >
+        {{quote.name}}
+      </li>
+      <app-quote-details [quote]='quote'></app-quote-details>
+  </div>
 </ul>
