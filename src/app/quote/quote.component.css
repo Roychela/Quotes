@@ -1,0 +1,12 @@
+h1 {
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.bg {
+  background: url("https://materializecss.com/images/sample-1.jpg");
+  color: white;
+  background-repeat: no-repeat;
+}
+h6 {
+  padding: 5px;
+}
