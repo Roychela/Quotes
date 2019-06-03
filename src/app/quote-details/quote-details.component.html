@@ -1,4 +1,6 @@
 <h4> <br>
   {{quote.description}} on {{quote.dateCreated|date}} by {{quote.author}}
 </h4>
+<p>Upvotes: {{quote.upVote}}</p>
 <button (click) = 'quoteDelete(true)'> Delete Quote </button>
+<button (click) = 'quoteUpvote()'> Upvote Quote </button>
