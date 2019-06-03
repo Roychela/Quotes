@@ -1,14 +1,12 @@
+<link href="https://fonts.googleapis.com/css?family=Great+Vibes|Plaster&display=swap" rel="stylesheet">
 <h1>MOTIVATIONAL QUOTES GENERATOR</h1>
-<div class="container-fluid">
+<div class="container">
     <div class="row jumbotron bg">
         <app-quote-form (addQuote)="addNewQuote($event)"></app-quote-form>
     </div>
     <div class="row" *ngFor="let quote of quotes;let i = 'index'">
-        <div class="row">
-              <h6 id="{{i}}">{{quote.name}} posted <br> </h6>
-        </div>
-        <div class="row">
-            <app-quote-details  [quote]='quote' (isComplete)= 'deleteQuote($event,i)'></app-quote-details>
-        </div>
+        <h6 id="{{i}}" appHighlight *ngIf= 'highlightingFunction(i) && quote.upVote > 0'>{{quote.name}} posted <br></h6>
+        <li *ngIf= '!highlightingFunction(i) ||  quote.upVote === 0' >{{quote.name}} posted</li>
+        <app-quote-details  [quote]='quote' (isComplete)= 'deleteQuote($event,i)'></app-quote-details>
     </div>
 </div>

@@ -21,6 +21,18 @@ export class QuoteComponent implements OnInit {
         }
     }
 }
+  highlightingFunction(index) {
+    const check = this.quotes[index].upVote;
+    if (this.quotes.length > 0) {
+      const votes = [];
+    this.quotes.forEach(quote => votes.push(quote.upVote));
+    if (check === Math.max(...votes)) {
+      return true;
+    }
+    }
+
+  }
+
   constructor() { }
 
   ngOnInit() {
